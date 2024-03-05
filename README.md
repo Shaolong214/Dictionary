@@ -1,5 +1,47 @@
 # Dictionary
 
+**Usage:**
+Follow these steps to get your Dictionary application up and running:
+
+Prerequisites:
+
+- Ensure you have Java installed on your machine. You can check by running java -version in your terminal. If Java is not installed, please download and install it from the official Oracle website or use your system's package manager.
+
+Running the Application:
+
+1. Download the Application
+
+- Download Server.jar and Client.jar from the releases section of this GitHub repository.
+
+2. Locate the Downloaded Files
+
+- Navigate to the folder where Server.jar and Client.jar are downloaded.
+
+3. Start the Server
+
+- Open a terminal (Command Prompt, PowerShell, or any terminal in your operating system).
+- Change the directory to where Server.jar is located using the cd command. For example, if Server.jar is in Downloads, type:
+
+`cd path/to/your/downloads`
+
+Start the server by typing:
+
+`java -jar Server.jar`
+
+Keep the terminal open; the server must be running for the client to connect.
+
+4. Start the Client
+
+- Open another terminal window.
+- Navigate to the folder containing Client.jar using the cd command, similar to how you navigated to Server.jar.
+Start the client application by typing:
+
+`java -jar Client.jar`
+
+- The dictionary application should now be running, and you can start using it.
+
+Congratulations! You have successfully set up and started the dictionary application. Enjoy using it!
+
 **Introduction**
 
 In the dynamic world of digital communication, the demand for systems adept at concurrent and efficient data processing is escalating. To address this need, the project presents a dictionary system based on a client-server architecture. The system features functionalities for adding, deleting, updating, and querying words. It is designed with a robust server capable of concurrently managing multiple client requests, thereby ensuring quick and accurate processing.
@@ -37,7 +79,7 @@ The architecture employs a client-server model with a thread-per-connection stra
 
  <img width="1000" alt="image" src="https://github.com/Shaolong214/Dictionary/assets/103941617/ecce254a-3fb8-47b7-bd54-3fcabe3556cd">
 
-/*Figure 1: Client-Server Interaction in a Multi-threaded Dictionary Application*/
+*Figure 1: Client-Server Interaction in a Multi-threaded Dictionary Application*
 
 The sequence diagram depicts the multi-threaded interaction between a dictionary server and its clients. Initially, the DictionaryServer initializes, setting up a listening socket and a GUI interface. As clients connect, individual threads (Connection) are spawned to handle their requests. For instance, when a client, through its ClientUI, sends a "query" request for a word's meaning, this request is channelled through the DictionaryClient to the server's Connection thread. The server processes the query, retrieves the word's meaning, and sends a response back. The client then displays this response on its user interface, completing the request-response cycle.
 
