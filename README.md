@@ -48,6 +48,10 @@ In the dynamic world of digital communication, the demand for systems adept at c
 
 To meet the stipulations of the assignment, we have constructed a client-server architecture where the server is tailored to concurrently manage multiple client requests. This system's foundation lies in the strategic use of threads and sockets, chosen for communication and managing potential failures. Specifically, we've adopted a 'thread-per-connection' architecture on the server side, enabling a multi-threaded environment. The dictionary's data repository is a txt file, ensuring ease of access and modification. For reliable client-server communication, we've employed TCP sockets. We've also prioritised error management; both ends are equipped to handle common issues like ‘Bind Exception’, ‘IO Exception’, ‘Unknown Host Exception’, ‘Null Pointer Exception’ and ‘General Exception’ without disrupting the system's flow. The exchange of information between the client and server is facilitated using Strings embedded with distinct characters, acting as directives for the required actions.
 
+![3001709647424_ pic](https://github.com/Shaolong214/Dictionary/assets/103941617/a3336ac9-e7fe-4feb-9ec6-aff385b62023)
+
+*Figure 1: User interface of Dictionary*
+
 **Components of the system**
 
 The multi-threaded dictionary system is structured within five Java classes, broadly segmented into three core components: Server, Client, and UI.
@@ -59,6 +63,10 @@ The Client serves as the bridge between the user and the server. It establishes 
 The UI component is twofold. On the server side, the UI provides a visual representation of server activity, including logs and the number of active client connections. This gives administrators a real-time overview of the server's status. On the client side, the UI offers an interactive platform for users to engage with the dictionary system. It captures user inputs, displays messages, and showcases explanations based on the server's feedback. The client's UI is designed to be user-friendly, ensuring that users can easily perform operations and receive immediate feedback.
 
 In essence, these three components work in harmony, with the Client and Server communicating seamlessly through established connections, and the UI components on both sides ensuring that users and administrators have a smooth and informative experience.
+
+![3011709647424_ pic](https://github.com/Shaolong214/Dictionary/assets/103941617/cdc67b99-b75e-474f-8526-8990a57f00d4)
+
+*Figure 2: Server interface*
 
 **Class design**
 
@@ -79,7 +87,7 @@ The architecture employs a client-server model with a thread-per-connection stra
 
  <img width="1000" alt="image" src="https://github.com/Shaolong214/Dictionary/assets/103941617/ecce254a-3fb8-47b7-bd54-3fcabe3556cd">
 
-*Figure 1: Client-Server Interaction in a Multi-threaded Dictionary Application*
+*Figure 3: Client-Server Interaction in a Multi-threaded Dictionary Application*
 
 The sequence diagram depicts the multi-threaded interaction between a dictionary server and its clients. Initially, the DictionaryServer initializes, setting up a listening socket and a GUI interface. As clients connect, individual threads (Connection) are spawned to handle their requests. For instance, when a client, through its ClientUI, sends a "query" request for a word's meaning, this request is channelled through the DictionaryClient to the server's Connection thread. The server processes the query, retrieves the word's meaning, and sends a response back. The client then displays this response on its user interface, completing the request-response cycle.
 
